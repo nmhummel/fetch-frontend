@@ -57,13 +57,29 @@ export default function App() {
               <div>{`There is a problem fetching the post data - ${error}`}</div>
             )}
             <p>
-              Occupations: {occupation}
+              Occupations:<br/> {allOccupations.map(occupation => {
+                return (
+                  <ul>
+                    <li>{occupation}</li>
+                  </ul>
+                )
+              })}
             </p>
+            <br/>
+            <p>
+              States:<br/> {allStates.map(state => {
+                return (
+                  <ul>
+                    <li>{state.name}, {state.abbreviation}</li>
+                  </ul>
+                )
+              })}
+            </p>
+
           </div>
 
           <div className="mt-10">
             <div className="mt-4 max-w-2xl h-30 rounded-2xl text-xl text-left w-2/3 text-white lg:mx-auto w-full p-4 bg-fetchYellow rounded-md shadow-card">
-
 
 
               <p>Your task is to build a webpage with a user creation form. The form should take the following required inputs:</p>
