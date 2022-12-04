@@ -24,7 +24,6 @@ export default function App() {
   const [allStates, setAllStates] = useState([]);
   const [signupData, setSignupData] = useState(initialState);
   const [passwordShown, setPasswordShown] = useState(false);
-  // const toastId = useRef(null);
 
   const dataEndpoint = "https://frontend-take-home.fetchrewards.com/form";
 
@@ -58,7 +57,7 @@ export default function App() {
 
   const submitFormData = async (event) => {
     event.preventDefault();
-    console.log("validateFields", validateFields(signupData))
+    // console.log("validateFields", validateFields(signupData))
     if (validateFields(signupData)) {
       try {
       
@@ -71,12 +70,11 @@ export default function App() {
             body: JSON.stringify(signupData)
         });
 
-        console.log("postResponse.status", postResponse.status)
-
+        // console.log("postResponse.status", postResponse.status)
         if (postResponse.status === 201) {
           toast.success('Your application has been submitted!');
           clearState();
-          // return signupData
+          console.log("Submission Data: ", signupData)
         } else {
           toast.error('Something went wrong. Please double check your information.');
         }
@@ -107,19 +105,19 @@ export default function App() {
   return (
     <div className="App">
      <Header />
-      <div className="py-1">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h1 className="text-2xl text-fetchYellow font-bold lg:text-center">Join Fetch today and SAVE!</h1>
-          <div className="text-2xl text-fetchYellow font-bold lg:text-center">
+      <div className="py-1 relative">
+        <div className="body absolute inset-x-0 top-32 h-16 mt-24 max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-xl text-red-600 my-5 italic lg:text-center">
             {loading && <div>A moment please...</div>}
             {error && (
               <div>{`There is a problem fetching the post data - ${error}`}</div>
             )}
           </div>
+          <h1 className="text-2xl mt-8 text-fetchYellow font-bold lg:text-center">Join Fetch today and SAVE!</h1>
           <div className="m-10">
             <div className="m-3 max-w-3xl h-30 rounded-2xl text-xl text-left w-1/2 text-black lg:mx-auto w-full p-4 bg-fetchYellow rounded-md shadow-card">
               <form onSubmit={submitFormData} className="place-content-center" autoComplete='none'>
-                
+
                 <input className="text-black rounded text-base px-2 my-2 w-full h-10"
                   type="text" 
                   placeholder="Full Name"
@@ -140,7 +138,7 @@ export default function App() {
                 
                 <input className="text-black rounded text-base px-2 my-2 w-full h-10"
                     type={passwordShown ? "text" : "password"}
-                    placeholder="Password"
+                    placeholder="Password*"
                     onChange={handleDataChange}
                     name="password" 
                     id='password'
@@ -183,27 +181,32 @@ export default function App() {
                 >
                   SUBMIT
                 </button>
+
                 <ToastContainer
-                  position="top-center"
+                  position="bottom-right"
                   autoClose={3000}
                   hideProgressBar={false}
-                  newestOnTop={false}
+                  newestOnTop={true}
                   closeOnClick
-                  rtl={false}
-                  pauseOnFocusLoss
+                  closeButton={false}
                   limit={3}
-                  draggable
+                  draggable={true}
+                  draggableDirection="y"
                   pauseOnHover
                   theme="light"
                 />
               </form>
             </div>
-            <span className="">A minimum of eight characters, at least one uppercase letter, one lowercase letter, one number, and one special character</span>
+            <div className="text-sm text-left">
+              *Password must be a minimum of eight characters, at least one uppercase letter, one lowercase letter, one number, and one special character
+            </div>
+            <div className="mt-24">
+              <img src="footer.png" alt="footer info" onClick={() => toast.info("It's only a model...")}/>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  
   );
 }
 

@@ -9,28 +9,8 @@
   /* font-size: xx-large; */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-
-
-
-.App {
+.App .body {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -38,10 +18,12 @@
   font-size: 22px;
   max-width: 700px;
   min-height: 672px;
+  height: auto;
   margin: 0 auto;
   border-radius: 25px;
   color: white;
-  background-color: rgba(0, 0, 0, 0.5);
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  background-color: #090325;
 }
 
 .App > input {
@@ -83,3 +65,8 @@ button {
   height: 50px;
   margin: 0 auto;
 }
+
+.App-link {
+  color: #61dafb;
+}
+

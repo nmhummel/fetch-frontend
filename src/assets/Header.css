@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.App {
-  text-align: center;
-  color: white;
-  background-color: rgb(48, 13, 57);
-  /* font-size: xx-large; */
-}
 
 .App-logo {
   height: 40vmin;
@@ -17,6 +11,8 @@
 .App-header {
   height: 150px;
   display: flex;
+  text-align: center;
+  justify-items: center;
   flex-direction: row;
   /* align-items: left; */
   justify-content: left;
