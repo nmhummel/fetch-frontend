@@ -153,7 +153,7 @@ export default function App() {
               id="occupation"
               onChange={handleDataChange} 
             >
-              <option value="">Select your occupation:</option>
+              <option value="">Select Your Occupation:</option>
               {allOccupations.map((occupation, index) => {
                 return(
                   <option key={index} value={occupation}>{occupation}</option>
@@ -167,7 +167,7 @@ export default function App() {
               id="state"
               onChange={handleDataChange} 
             >
-              <option value="">Select your State:</option>
+              <option value="">Select Your State:</option>
               {allStates.map((data, index) => {
                 return(
                   <option key={index} value={data.name}>{data.name} - {data.abbreviation}</option>
@@ -201,7 +201,7 @@ export default function App() {
           *Password must be a minimum of eight characters, at least one uppercase letter, one lowercase letter, one number, and one special character
         </div>
         <div className="mt-24">
-          <img src="footer.png" alt="footer info" onClick={() => toast.info("It's only a model...")}/>
+          <img src="footer.png" alt="footer info" onClick={() => toast.info(`"It's only a model..."`)}/>
         </div>
       </div>
     </div>
