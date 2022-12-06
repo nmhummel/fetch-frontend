@@ -103,109 +103,108 @@ export default function App() {
   };
 
   return (
-    <div className="App">
+    <div className="App flex flex-col flex-nowrap justify-center items-center align-center">
      <Header />
-      <div className="py-1 relative">
-        <div className="body absolute inset-x-0 top-32 h-16 mt-24 max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-xl text-red-600 my-5 italic lg:text-center">
-            {loading && <div>A moment please...</div>}
-            {error && (
-              <div>{`There is a problem fetching the post data - ${error}`}</div>
-            )}
-          </div>
-          <h1 className="text-2xl mt-8 text-fetchYellow font-bold lg:text-center">Join Fetch today and SAVE!</h1>
-          <div className="m-10">
-            <div className="m-3 max-w-3xl h-30 rounded-2xl text-xl text-left w-1/2 text-black lg:mx-auto w-full p-4 bg-fetchYellow rounded-md shadow-card">
-              <form onSubmit={submitFormData} className="place-content-center" autoComplete='none'>
+     
+    <div className="body flex items-center mt-24 max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="text-xl text-red-600 my-5 italic lg:text-center">
+        {loading && <div>A moment please...</div>}
+        {error && (
+          <div>{`There is a problem fetching the post data - ${error}`}</div>
+        )}
+      </div>
+      <h1 className="text-2xl mt-8 text-fetchYellow font-bold lg:text-center">Join Fetch today and SAVE!</h1>
+      <div className="m-5">
+        <div className="h-30 rounded-2xl text-xl text-left w-1/2 text-black lg:mx-auto w-full p-4 bg-fetchYellow rounded-md shadow-card sm:w-full">
+          <form onSubmit={submitFormData} className="place-content-center" autoComplete='none'>
 
-                <input className="text-black rounded text-base px-2 my-2 w-full h-10"
-                  type="text" 
-                  placeholder="Full Name"
-                  onChange={handleDataChange}
-                  name="name" 
-                  id="name"
-                  value={signupData.name}
-                />
-              
-                <input className="text-black rounded text-base px-2 my-2 w-full h-10"
-                    type="text" 
-                    placeholder="Email Address"
-                    onChange={handleDataChange}
-                    name="email" 
-                    id="email"
-                    value={signupData.email}
-                  />
-                
-                <input className="text-black rounded text-base px-2 my-2 w-full h-10"
-                    type={passwordShown ? "text" : "password"}
-                    placeholder="Password*"
-                    onChange={handleDataChange}
-                    name="password" 
-                    id='password'
-                    value={signupData.password}
-                  /><span className="-ml-8" id="eyeIcon" onClick={togglePasswordVisiblity}>
-                    {passwordShown ? eyeOpen : eyeClosed}
-                  </span>
+            <input className="text-black rounded text-base px-2 my-2 w-full h-10"
+              type="text" 
+              placeholder="Full Name"
+              onChange={handleDataChange}
+              name="name" 
+              id="name"
+              value={signupData.name}
+            />
+          
+            <input className="text-black rounded text-base px-2 my-2 w-full h-10"
+                type="text" 
+                placeholder="Email Address"
+                onChange={handleDataChange}
+                name="email" 
+                id="email"
+                value={signupData.email}
+              />
+            
+            <input className="text-black rounded text-base px-2 my-2 w-full h-10"
+                type={passwordShown ? "text" : "password"}
+                placeholder="Password*"
+                onChange={handleDataChange}
+                name="password" 
+                id='password'
+                value={signupData.password}
+              /><span className="-ml-8" id="eyeIcon" onClick={togglePasswordVisiblity}>
+                {passwordShown ? eyeOpen : eyeClosed}
+              </span>
 
-                <select className="text-black rounded text-base px-1 my-2 w-full h-10"
-                  value={signupData.occupation}
-                  name="occupation" 
-                  id="occupation"
-                  onChange={handleDataChange} 
-                >
-                  <option value="">Select your occupation:</option>
-                  {allOccupations.map((occupation, index) => {
-                    return(
-                      <option key={index} value={occupation}>{occupation}</option>
-                    )
-                  })}
-                </select>
-              
-                <select className="text-black rounded text-base px-1 my-2 w-full h-10"
-                  value={signupData.state} 
-                  name="state" 
-                  id="state"
-                  onChange={handleDataChange} 
-                >
-                  <option value="">Select your State:</option>
-                  {allStates.map((data, index) => {
-                    return(
-                      <option key={index} value={data.name}>{data.name} - {data.abbreviation}</option>
-                    )
-                  })}
-                </select>
+            <select className="text-black rounded text-base px-1 my-2 w-full h-10"
+              value={signupData.occupation}
+              name="occupation" 
+              id="occupation"
+              onChange={handleDataChange} 
+            >
+              <option value="">Select your occupation:</option>
+              {allOccupations.map((occupation, index) => {
+                return(
+                  <option key={index} value={occupation}>{occupation}</option>
+                )
+              })}
+            </select>
+          
+            <select className="text-black rounded text-base px-1 my-2 w-full h-10"
+              value={signupData.state} 
+              name="state" 
+              id="state"
+              onChange={handleDataChange} 
+            >
+              <option value="">Select your State:</option>
+              {allStates.map((data, index) => {
+                return(
+                  <option key={index} value={data.name}>{data.name} - {data.abbreviation}</option>
+                )
+              })}
+            </select>
 
-                <button className="bg-black border-white border-2 text-white w-full rounded mt-3 text-xl px-8 py-2"
-                  type="submit" 
-                  name="submitButton"
-                >
-                  SUBMIT
-                </button>
+            <button className="bg-black border-white border-2 text-white w-full rounded mt-3 text-xl px-8 py-2"
+              type="submit" 
+              name="submitButton"
+            >
+              SUBMIT
+            </button>
 
-                <ToastContainer
-                  position="bottom-right"
-                  autoClose={3000}
-                  hideProgressBar={false}
-                  newestOnTop={true}
-                  closeOnClick
-                  closeButton={false}
-                  limit={3}
-                  draggable={true}
-                  draggableDirection="y"
-                  pauseOnHover
-                  theme="light"
-                />
-              </form>
-            </div>
-            <div className="text-sm text-left">
-              *Password must be a minimum of eight characters, at least one uppercase letter, one lowercase letter, one number, and one special character
-            </div>
-            <div className="mt-24">
-              <img src="footer.png" alt="footer info" onClick={() => toast.info("It's only a model...")}/>
-            </div>
-          </div>
+            <ToastContainer
+              position="bottom-right"
+              autoClose={3000}
+              hideProgressBar={false}
+              newestOnTop={true}
+              closeOnClick
+              closeButton={false}
+              limit={3}
+              draggable={true}
+              draggableDirection="y"
+              pauseOnHover
+              theme="light"
+            />
+          </form>
+        </div>
+        <div className="text-sm mt-3 text-left">
+          *Password must be a minimum of eight characters, at least one uppercase letter, one lowercase letter, one number, and one special character
+        </div>
+        <div className="mt-24">
+          <img src="footer.png" alt="footer info" onClick={() => toast.info("It's only a model...")}/>
         </div>
       </div>
+    </div>
     </div>
   );
 }
