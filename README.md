@@ -1,5 +1,3 @@
-# ABOUT
-
 <h1 align="center">Hi 👋, I'm Natalie Hummel</h1>
 <h3 align="center">Welcome to my version of the Frontend Assessment for Fetch Rewards.</h3>
 <h3 align="center">Connect with me:</h3>
@@ -18,6 +16,7 @@
     </a>
 </p>
 
+# ABOUT
 Welcome to my version of the Frontend Assessment for Fetch Rewards. I was tasked with building a simple form that included the following input fields:
 - name
 - email
@@ -34,6 +33,7 @@ I also used Tailwind for most of my styling with CSS files as well. I use Tailwi
 
 ### To get started
 Clone my repository on your local machine. You will need to have Node installed. After cloning, run command `npm install` to get all dependencies. 
+
 
 In the project directory terminal, you can run:
 
