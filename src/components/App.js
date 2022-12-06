@@ -27,7 +27,7 @@ export default function App() {
 
   const dataEndpoint = "https://frontend-take-home.fetchrewards.com/form";
 
-  const getData = useCallback(()=>{
+  const getData = useCallback(() => {
     fetch(dataEndpoint)
     .then((response) => {
       if (!response.ok) {
@@ -60,7 +60,6 @@ export default function App() {
     // console.log("validateFields", validateFields(signupData))
     if (validateFields(signupData)) {
       try {
-      
         const postResponse = await fetch(dataEndpoint, {
             method: 'POST',
             headers: {
@@ -70,7 +69,7 @@ export default function App() {
             body: JSON.stringify(signupData)
         });
 
-        // console.log("postResponse.status", postResponse.status)
+        console.log("postResponse.status", postResponse.status)
         if (postResponse.status === 201) {
           toast.success('Your application has been submitted!');
           clearState();
@@ -86,6 +85,7 @@ export default function App() {
 
   const handleDataChange = (event) => {
     const { name, value } = event.target;
+    // console.log("name: value", name, value)
     setSignupData(signupData => {
       return {
         ...signupData,
