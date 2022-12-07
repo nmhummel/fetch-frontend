@@ -49,11 +49,10 @@ This will end your local session.
 ### `npx playwright test`
 
 Launches the test runner in the interactive popup in yur default browser. 
-You will need to end any running sessions to perform this.
+You should NOT have to end any running sessions to perform this. Likewise, the server does NOT have to be already running to perform this. 
 
+*I recommend opening a separate terminal for this action.*
 
-
-P.S. The footer image taken from the Fetch website is just for show, but click it for a fun Easter egg.
 
 <h3 align="center">Languages and Tools:</h3>
 <p align="center"> 
@@ -72,5 +71,7 @@ P.S. The footer image taken from the Fetch website is just for show, but click i
     <a href="https://playwright.dev/" target="_blank" rel="noreferrer"> 
         <img src="https://playwright.dev/img/playwright-logo.svg" alt="tailwind" width="40" height="40"/> 
     </a> 
-
 </p>
+
+
+*P.S. The footer image taken from the Fetch website is just for show, but click it for a fun Easter egg.*

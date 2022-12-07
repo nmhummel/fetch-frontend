@@ -15,7 +15,6 @@ import { devices } from '@playwright/test';
 const config = {
   testDir: './tests',
   testMatch: /.*.js/,
-  /* Maximum time one test can run for. */
   timeout: 30 * 1000,
   expect: {
     /**
@@ -38,7 +37,7 @@ const config = {
   use: {
     actionTimeout: 0,
     baseURL: 'http://localhost:3000',
-    viewport: { width: 600, height: 300 },
+    viewport: { width: 400, height: 300 },
     ignoreHTTPSErrors: true,
     screenshot: 'only-on-failure',
     video: 'on-first-retry',
@@ -105,6 +104,7 @@ const config = {
   /* Run your local dev server before starting the tests */
   webServer: {
     command: 'npm run start',
+    reuseExistingServer: true,
     port: 3000,
   },
 };
