@@ -1,5 +1,5 @@
 <h1 align="center">Hi 👋, I'm Natalie Hummel</h1>
-<h3 align="center">Welcome to my version of the Frontend Assessment for Fetch Rewards.</h3>
+<h3 align="center">Welcome to my version of the assessment for Fetch Rewards' Frontend Apprenticeship.</h3>
 <h3 align="center">Connect with me:</h3>
 <p align="center">
     <a href="https://dev.to/nmhummel" target="blank">
